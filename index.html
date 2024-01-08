@@ -34,6 +34,7 @@
             justify-content: space-between;
             width: 600px;
             margin-bottom: 20px;
+
         }
 
         .card {
@@ -118,6 +119,7 @@
 
         // 카운트 다운 기본값
         let goleDate = new Date(2024, 5, 3, 0, 0, 0, 0)
+
         print(goleDate)
 
         function countDownFunction() {
@@ -137,7 +139,6 @@
 
             } else {
                 clearInterval(countDown)
-
                 document.querySelector('.cards').classList.add('display-none')
                 // getElementsByClassName 으로 접근하지 않는 이유 :  HTMLCollection을 반환, 접근하려면 인덱스를 사용해야 함. 
                 // Ex ) document.getElementsByClassName('cards')[0].classList.add('display-none');
@@ -159,12 +160,12 @@
             // 이를 삭제 해줌. 
             goleDate = document.getElementById('date').valueAsDate.getTime() - (9 * HOUR);
 
-            // 카운트 재 시작
-            countDownFunction();
-
             // 종료 되어서 멈춘 경우 디스플레이 다시 띄움. 
             document.querySelector('.cards').classList.remove('display-none')
             goleDateDiv.classList.remove('display-none')
+
+            // 카운트 재 시작
+            countDownFunction();
         })
 
         // 카운트 시작
